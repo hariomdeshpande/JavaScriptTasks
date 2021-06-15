@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    <link rel="stylesheet" href="./styles/myStyle.css">
+</head>
+
+<body>
+
+    <section class="container">
+        <h1>Counter</h1>
+        <div class="counter__Content">
+            <button id="decreaseCounter" class="btn counterBtn"> &minus; </button>
+            <span id="counterValue" class="counter ">0</span>
+            <button id="increaseCounter" class="btn counterBtn"> &plus; </button>
+            <button class="reset">Reset</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1>Timer</h1>
+        <div class="timer__Content">
+            Enter Minutes <input type="number" name="userTime" id="userTime" min="0">
+            <button class="btn timerBtn">Start</button>
+            <button class="btn stopTimerBtn" disabled>Stop</button>
+            <span id="time">00:00</span>
+        </div>
+    </section>
+
+    <section class="container faqContainer">
+        <h1>FAQ's</h1>
+        <span class="faq">
+            <button class="faq__toggle">Click To Toggle FAQ Content !</button>
+            <div class="faqContent">
+                <h4 class="subHead">Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore ex eius deleniti aut quam
+                    culpa officiis unde, sit impedit? Et corporis perferendis enim voluptates accusamus eveniet earum
+                    nobis consequuntur?</p>
+            </div>
+        </span>
+        <span class="faq">
+            <button class="faq__toggle">Click To Toggle FAQ Content !</button>
+            <div class="faqContent">
+                <h4 class="subHead">Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore ex eius deleniti aut quam
+                    culpa officiis unde, sit impedit? Et corporis perferendis enim voluptates accusamus eveniet earum
+                    nobis consequuntur?</p>
+            </div>
+        </span>
+        <span class="faq">
+            <button class="faq__toggle">Click To Toggle FAQ Content !</button>
+            <div class="faqContent">
+                <h4 class="subHead">Lorem</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias tempore ex eius deleniti aut quam
+                    culpa officiis unde, sit impedit? Et corporis perferendis enim voluptates accusamus eveniet earum
+                    nobis consequuntur?</p>
+            </div>
+        </span>
+    </section>
+    <section class="container tabSection">
+        <h1>Tab Section Menu</h1>
+        <nav class="navbar">
+            <button class="navBtn" id="navHome">Home</button>
+            <button class="navBtn" id="navAbout">About Us</button>
+            <button class="navBtn" id="navContact">Contact</button>
+        </nav>
+        <div class="navBox">
+            <div class="navBox__Content navHome active">
+                <p>
+                <h1 class="subHead">Home Data</h1>
+                Some Content About Home
+                </p>
+            </div>
+            <div class="navBox__Content navAbout">
+                <p>
+                <h1 class="subHead">About Data</h1>
+                Some Content About Our Company
+                </p>
+            </div>
+            <div class="navBox__Content navContact">
+                <p>
+                <h1 class="subHead">Contact Data</h1>
+                Some content about Contacting our Company
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="container toDo">
+        <h1>To Do App</h1>
+        <ul class="toDo__Box" id="toDo__Box">
+            <li class="toDo__Box__Content">
+                <span>Task 1</span>
+                <button class="removeTaskBtn" type="button"> &times; </button>
+            </li>
+            <li class="toDo__Box__Content">
+                <span> Task 2</span>
+                <button class="removeTaskBtn" type="button"> &times; </button>
+            </li>
+        </ul>
+        Enter Task To Add :<input type="text" name="task" id="addTask">
+        <button class="btn addTaskBtn">Add Task</button>
+    </section>
+    <section class="container calculator">
+        <h1>Calculator</h1>
+        <div class="calculatorBox">
+            <span id="outputValue" class="outputValue">
+                </span>
+
+            <div class="buttonBox" id="buttonBox">
+
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+
+
+    <script src="./scripts/jQuery.min.js"></script>
+    <script src="./scripts/myScript.js"></script>
+
+</body>
+
+</html>

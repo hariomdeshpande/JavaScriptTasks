@@ -1,0 +1,105 @@
+body{
+    box-sizing: border-box;
+}
+.container{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter__Content{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#time{
+    font-size: 1.5rem;
+    margin: 20px 50px;
+}
+#userTime{
+    font-size: 1.3rem;
+    width: 50px;
+    text-align: center;
+}
+.faqContainer{
+    align-items: flex-start;
+}
+.faq{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.faq__toggle{
+    font-size: 1.2rem;
+    padding: 10px;
+}
+.subHead{
+    color: #ff0000;
+}
+/* Tabs Section */
+.navBtn{
+    margin: 0 20px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.navBtn:active{
+    border-color: #ff0000;
+}
+.navBox{
+    display: flex;
+    align-self: flex-start;
+}
+.navBox__Content{
+    display: none;
+}
+.active{
+    display: block;
+}
+
+/* To Do Section */
+
+.toDo__Box{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid ;
+}
+.toDo__Box__Content{
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.removeTaskBtn{
+    margin-left: 20px;
+}
+#addTask{
+    padding: 10px;
+    width: 30%;
+}
+.btn{
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Calculator */
+.outputValue{
+    padding: 10px 15px;
+}
+.calculatorBox{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #000000;
+}
+.buttonBox{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.calcNumBtn{
+    margin: 10px;
+    padding: 20px;
+}
