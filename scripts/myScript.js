@@ -103,21 +103,22 @@ $(document).ready(function () {
 
     function display(value) {
         $('.outputValue').val(value);
+        console.log(inputs)
     }
     var inputs = [];
-    var value = "";
+
     $('.calcNumBtn').on('click', function () {
-        if ($(this).val() == 'C') {
-            $('.outputValue').val(0);
-            inputs = []
-        } else if ($(this).val() == '=') {
-            display(eval(inputs.join(" ")));
-        } else {
             var preValue = $('.outputValue').text();
             var value = preValue + $(this).text();
+        if(!($(this).text()=='C'||$(this).text()=='=')){
             inputs.push(value);
             display(value)
         }
+        else if(($(this).val()=='=')){
+            console.log(eval(inputs.join(" ")))
+        }
+
+
 
 
     });
