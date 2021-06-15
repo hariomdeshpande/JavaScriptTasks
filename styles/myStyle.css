@@ -1,11 +1,13 @@
 body{
     box-sizing: border-box;
 }
+
 .container{
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 
 .counter__Content{

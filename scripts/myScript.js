@@ -97,17 +97,38 @@ $(document).ready(function () {
     symbols.forEach(element => {
         generateBtn(element);
     });
-    
-    generateBtn("=")
+    generateBtn('C');
+    generateBtn('=')
+    $('.outputValue').val(0);
     
     function display(value){
-        $('.outputValue').text(value);
+        $('.outputValue').val(value);
     }
+    var inputs = [];
+    $('.calcNumBtn').on('click',function(){    
+        var preValue = $('.outputValue').val();
+        var value = preValue +  $(this).val();
+        value
+        if(symbols.includes($(this).val())){
+            var operator = $(this).val();
+            inputs.push(parseInt(value))
+            value="";
+            display(value)
 
-    $('.calcNumBtn').on('click',function(){
-        var value = "";
-        value = String(value) +  String($(this).text()); 
-        display(value)
+        }else if('C'==($(this).val())){
+            value="0";
+            inputs=[];
+            display(value)
+        }
+        else if('='==($(this).val())){
+            inputs.push(parseInt($('.outputValue').val()));
+            var add = inputs.reduce((a, b) => a + b) 
+            display(add) ;
+            inputs=[];
+        }
+        else{
+            display(value)
+        }
     });
 
 
