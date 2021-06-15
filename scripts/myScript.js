@@ -87,48 +87,39 @@ $(document).ready(function () {
     });
 
     // Calculator App
-    function generateBtn(value){
-        $('.buttonBox').append("<button class='calcNumBtn' value="+value+">"+value+"</button>");
+    function generateBtn(value) {
+        $('.buttonBox').append("<button class='calcNumBtn' value=" + value + ">" + value + "</button>");
     }
-    for(let i=9;i>=0;i--){
-         generateBtn(i);
+    for (let i = 9; i >= 0; i--) {
+        generateBtn(i);
     }
-    var symbols = ['+','-','*','/','%']
+    var symbols = ['+', '-', '*', '/', '%']
     symbols.forEach(element => {
         generateBtn(element);
     });
     generateBtn('C');
     generateBtn('=')
     $('.outputValue').val(0);
-    
-    function display(value){
+
+    function display(value) {
         $('.outputValue').val(value);
     }
     var inputs = [];
-    $('.calcNumBtn').on('click',function(){    
-        var preValue = $('.outputValue').val();
-        var value = preValue +  $(this).val();
-        value
-        if(symbols.includes($(this).val())){
-            var operator = $(this).val();
-            inputs.push(parseInt(value))
-            value="";
+    var value = "";
+    $('.calcNumBtn').on('click', function () {
+        if ($(this).val() == 'C') {
+            $('.outputValue').val(0);
+            inputs = []
+        } else if ($(this).val() == '=') {
+            display(eval(inputs.join(" ")));
+        } else {
+            var preValue = $('.outputValue').text();
+            var value = preValue + $(this).text();
+            inputs.push(value);
             display(value)
+        }
 
-        }else if('C'==($(this).val())){
-            value="0";
-            inputs=[];
-            display(value)
-        }
-        else if('='==($(this).val())){
-            inputs.push(parseInt($('.outputValue').val()));
-            var add = inputs.reduce((a, b) => a + b) 
-            display(add) ;
-            inputs=[];
-        }
-        else{
-            display(value)
-        }
+
     });
 
 
