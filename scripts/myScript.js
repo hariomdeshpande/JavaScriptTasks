@@ -100,11 +100,14 @@ $(document).ready(function () {
     
     generateBtn("=")
     
+    function display(value){
+        $('.outputValue').text(value);
+    }
+
     $('.calcNumBtn').on('click',function(){
         var value = "";
         value = String(value) +  String($(this).text()); 
-        console.log(value)
-        $('.outputValue').text(value);
+        display(value)
     });
 
 
