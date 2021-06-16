@@ -102,29 +102,36 @@ $(document).ready(function () {
     $('.outputValue').val(0);
 
     function display(value) {
-        $('.outputValue').val(value);
-        console.log(inputs)
+        $('.outputValue').text(value);
     }
     var inputs = [];
+    var strs = [];
 
     $('.calcNumBtn').on('click', function () {
             var preValue = $('.outputValue').text();
             var value = preValue + $(this).text();
-        if(!($(this).text()=='C'||$(this).text()=='=')){
-            inputs.push(value);
-            display(value)
-        }
-        else if(($(this).val()=='=')){
-           display(eval(inputs.join(" ")))
-        }
-        else if(($(this).val()=='C')){
-            inputs = []
-            display(0)
-        }
+            
+            if( symbols.includes($(this).text())){
+                inputs.push(strs.join(" "))
+                strs=[]
+                
+            }
+            else if($(this).text()=='='){
+                console.log(eval(inputs.join("")))
+            }
+            else{
+                strs.push(value)
+                console.log(strs)
+                console.log(inputs)
+            }
 
-
-
-
+        // if( symbols.includes($(this).text())){
+        //    inputs.push(value);
+        //    console.log(inputs);
+        // }
+        // else{
+        //     console.log(value)
+        // }
     });
 
 
