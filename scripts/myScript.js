@@ -115,7 +115,11 @@ $(document).ready(function () {
             display(value)
         }
         else if(($(this).val()=='=')){
-            console.log(eval(inputs.join(" ")))
+           display(eval(inputs.join(" ")))
+        }
+        else if(($(this).val()=='C')){
+            inputs = []
+            display(0)
         }
 
 
