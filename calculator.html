@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            background-color: #808080;
+        }
+        .heading{
+            color: #ffffff;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .btn,.operatorBtn,
+        #disp {
+            padding: 20px;
+            font-size: 2rem;
+            margin: 5px;
+        }
+        .calculatorWrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 20px;
+        }
+        .calculator__btnWrapper{
+            display: flex;
+        }
+        .digitsBtns{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .operatorBtns{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        #resultBtn{
+            grid-column: 1 / span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="calculator">
+        <h1 class="heading">Calculator</h1>
+        <div class="calculatorWrapper">
+        <input type="text" name="disp" id="disp" placeholder="0" readonly>
+
+        <div class="calculator__btnWrapper">
+            <div class="digitsBtns">
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+
+                
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">0</button>
+                <button class="btn">.</button>
+            </div>
+            <div class="operatorBtns">
+                <button class="operatorBtn" id="addBtn">+</button>
+                <button class="operatorBtn" id="subBtn">-</button>
+                <button class="operatorBtn" id="mulBtn">*</button>
+                <button class="operatorBtn" id="divBtn">/</button>
+                <button class="operatorBtn" id="modBtn">%</button>
+                <button class="operatorBtn" id="clrBtn">C</button>
+                <button class="operatorBtn" id="resultBtn">=</button>
+            </div>
+
+        </div>
+    </div>
+        
+
+       
+
+    </section>
+
+    <script>
+        var inputs = []
+        var uinput = "";
+        var op = "";
+        var value = "";
+        var disp = document.getElementById("disp");
+        var btn = document.querySelectorAll(".btn");
+        btn.forEach(function (x) {
+            x.addEventListener('click', function () {
+                value = disp.value;
+                disp.value = value.concat(this.innerHTML);
+                uinput = disp.value;
+
+            });
+        });
+        var addBtn = document.getElementById('addBtn');
+        addBtn.addEventListener('click', function () {
+            inputs.push(uinput);
+            inputs.push("+");
+            disp.value = "";
+        });
+        var addBtn = document.getElementById('subBtn');
+        addBtn.addEventListener('click', function () {
+            inputs.push(uinput);
+            inputs.push("-");
+            disp.value = "";
+        });
+        var mulBtn = document.getElementById('mulBtn');
+        mulBtn.addEventListener('click', function () {
+            inputs.push(uinput);
+            inputs.push("*");
+            disp.value = "";
+        });
+        var divBtn = document.getElementById('divBtn');
+        divBtn.addEventListener('click', function () {
+            inputs.push(uinput);
+            inputs.push("/");
+            disp.value = "";
+        });
+        var modBtn = document.getElementById('modBtn');
+        modBtn.addEventListener('click', function () {
+            inputs.push(uinput);
+            inputs.push("%");
+            disp.value = "";
+        });
+
+        var clrBtn = document.getElementById('clrBtn');
+        clrBtn.addEventListener('click', function () {
+            inputs = [];
+            disp.value = "";
+        });
+
+        var resultBtn = document.getElementById('resultBtn');
+        resultBtn.addEventListener('click', function () {
+            inputs.push(disp.value);
+            disp.value = eval(inputs.join(" "));
+        });
+
+    </script>
+</body>
+
+</html>
